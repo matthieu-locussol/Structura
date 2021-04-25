@@ -19,7 +19,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          submodules: ""
+          submodules: recursive
 
       - name: Configure build
         working-directory: ${{runner.workspace}}
