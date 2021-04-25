@@ -10,7 +10,7 @@ namespace Structura {
             const Node* item = current;
             _print(current);
             current = current->next;
-            delete (item);
+            delete item;
         }
 
         this->_size = 0;
@@ -30,7 +30,7 @@ namespace Structura {
     }
 
     template <typename T>
-    const T& Stack<T>::pop()
+    const T Stack<T>::pop()
 
     {
         if (this->_size == 0) {
@@ -45,7 +45,7 @@ namespace Structura {
         this->_head = this->_head->next;
         --this->_size;
 
-        const T& value = node->value;
+        const T value = node->value;
         delete node;
 
         return value;
@@ -68,7 +68,7 @@ namespace Structura {
     }
 
     template <typename T>
-    void Stack<T>::_print(Node* node) const
+    void Stack<T>::_print(const Node* node) const
     {
         std::cout << "============================" << std::endl;
         std::cout << "Me: " << node << std::endl;

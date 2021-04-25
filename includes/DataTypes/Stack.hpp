@@ -16,7 +16,7 @@ namespace Structura {
 
         void push(const T& value);
 
-        const T& pop();
+        const T pop();
         const T& peek() const;
         const int& size() const;
 
@@ -34,7 +34,7 @@ namespace Structura {
         Node* _head = nullptr;
         Node* _tail = nullptr;
 
-        void _print(Node* node) const;
+        void _print(const Node* node) const;
     };
 } // namespace Structura
 
