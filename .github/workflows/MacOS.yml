@@ -1,4 +1,4 @@
-name: Compilation and tests for MacOS
+name: MacOS
 
 defaults:
   run:

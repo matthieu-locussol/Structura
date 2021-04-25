@@ -2,5 +2,5 @@
 
 mkdir -p build
 cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release -DSTRUCTURA_STATIC=FALSE
+cmake .. -DCMAKE_BUILD_TYPE=Debug -DSTRUCTURA_TESTS=ON
 make all
