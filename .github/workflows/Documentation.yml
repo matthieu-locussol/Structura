@@ -25,6 +25,7 @@ jobs:
       - name: Build library & documentation
         working-directory: ${{runner.workspace}}
         run: |
+          ls && pwd && ls Structura && pwd
           cd Structura
           cmake --build . --config "Release"
 
