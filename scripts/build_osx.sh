@@ -3,4 +3,4 @@
 mkdir -p build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Debug -DSTRUCTURA_TESTS=ON
-cmake --build .
+cmake --build . --config "Debug"
