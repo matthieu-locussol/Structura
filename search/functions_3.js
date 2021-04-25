@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7estack_23',['~Stack',['../class_structura_1_1_stack.html#a7d2cde57c395cc360f74f68abec3740e',1,'Structura::Stack']]]
+  ['_7estack_26',['~Stack',['../class_structura_1_1_stack.html#a7d2cde57c395cc360f74f68abec3740e',1,'Structura::Stack']]]
 ];

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['stack_2ehpp_15',['Stack.hpp',['../_stack_8hpp.html',1,'']]],
-  ['stack_2einl_16',['Stack.inl',['../_stack_8inl.html',1,'']]]
+  ['readme_2emd_17',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]]
 ];
