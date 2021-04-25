@@ -35,4 +35,4 @@ jobs:
 
       - name: Run tests
         working-directory: ${{runner.workspace}}/build
-        run: ./StructuraTests
+        run: ls && pwd && .\StructuraTests.exe
