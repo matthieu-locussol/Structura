@@ -4,6 +4,8 @@ defaults:
   run:
     shell: bash
 
+on: push
+
 jobs:
   build:
     runs-on: macos-latest
