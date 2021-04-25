@@ -23,6 +23,8 @@ jobs:
 
       - name: Configure build
         working-directory: ${{runner.workspace}}
+        env:
+          CXX: ${{matrix.cxx}}
         run: |
           cmake -Bbuild -H$GITHUB_WORKSPACE \
                 -DCMAKE_BUILD_TYPE=${{matrix.configs}} \
