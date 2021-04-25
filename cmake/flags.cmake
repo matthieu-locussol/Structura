@@ -1,12 +1,12 @@
 # Common compilation flags (depending on build configurations)
-SET( UNIX_DEFAULT_CXX_FLAGS         "-Wall -Wextra -Wno-sign-compare -Wno-unused-parameter -std=c++14" )
+SET( UNIX_DEFAULT_CXX_FLAGS         "-Wall -Wextra -Wno-sign-compare -Wno-unused-parameter -std=c++11" )
 SET( UNIX_DEFAULT_CXX_FLAGS_DEBUG   "-g3 -ggdb" )
 SET( UNIX_DEFAULT_CXX_FLAGS_RELEASE "-DNDEBUG -O3" )
 
 SET( MSVC_DEFAULT_CXX_FLAGS_DEBUG   "/D_DEBUG /DCORE_DEBUG /Od /Zi" )
 SET( MSVC_DEFAULT_CXX_FLAGS_RELEASE "/DNDEBUG /Ox" )
 
-SET( CMAKE_CXX_STANDARD 14 )
+SET( CMAKE_CXX_STANDARD 11 )
 
 # Platform-specific compilation flags
 IF( APPLE )
