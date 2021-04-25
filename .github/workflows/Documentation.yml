@@ -23,7 +23,7 @@ jobs:
                 -DSTRUCTURA_DOCUMENTATION=ON
 
       - name: Build library & documentation
-        working-directory: ${{runner.workspace}}/build
+        working-directory: ${{runner.workspace}}
         run: |
           cd Structura
           cmake --build . --config "Release"
