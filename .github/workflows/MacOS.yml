@@ -40,4 +40,4 @@ jobs:
 
       - name: Check memory leaks
         working-directory: ${{runner.workspace}}/build
-        run: ls && pwd && leaks --atExit -- ./StructuraTest
+        run: leaks --atExit -- ./StructuraTests
