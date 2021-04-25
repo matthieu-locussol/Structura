@@ -15,10 +15,13 @@ namespace Structura {
         Stack& operator=(const Stack&) = delete;
 
         void push(const T& value);
+        void duplicate();
+        void swap();
 
         const T pop();
         const T& peek() const;
         const int& size() const;
+        bool isEmpty() const;
 
         ~Stack();
 

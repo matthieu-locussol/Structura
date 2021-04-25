@@ -30,6 +30,28 @@ namespace Structura {
     }
 
     template <typename T>
+    void Stack<T>::duplicate()
+    {
+        if (this->_size > 0) {
+            const T value = this->_head->value;
+            this->push(value);
+        }
+    }
+
+    template <typename T>
+    void Stack<T>::swap()
+    {
+        if (this->_size >= 2) {
+            Node* oldHead = this->_head;
+            Node* oldSecond = this->_head->next;
+
+            this->_head = oldSecond;
+            oldHead->next = oldSecond->next;
+            this->_head->next = oldHead;
+        }
+    }
+
+    template <typename T>
     const T Stack<T>::pop()
 
     {
@@ -65,6 +87,12 @@ namespace Structura {
     const int& Stack<T>::size() const
     {
         return this->_size;
+    }
+
+    template <typename T>
+    bool Stack<T>::isEmpty() const
+    {
+        return this->_size == 0;
     }
 
     template <typename T>
