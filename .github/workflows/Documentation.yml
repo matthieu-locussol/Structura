@@ -17,8 +17,7 @@ jobs:
       - name: Configure build
         working-directory: ${{runner.workspace}}
         run: |
-          ls
-          pwd
+          cd Structura
           cmake -Bbuild \
                 -DCMAKE_BUILD_TYPE=Release \
                 -DSTRUCTURA_DOCUMENTATION=ON
