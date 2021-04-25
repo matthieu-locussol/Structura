@@ -8,7 +8,7 @@
 
 ## Author
 
-Matthieu LOCUSSOL - Main developer (<dev.matthieu.locussol@gmail.com>)
+Matthieu LOCUSSOL - Main developer (<[dev.matthieu.locussol@gmail.com](mailto:dev.matthieu.locussol@gmail.com)>)
 
 ## Installation
 
