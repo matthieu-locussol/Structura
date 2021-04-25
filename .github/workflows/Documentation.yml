@@ -1,0 +1,34 @@
+name: Documentation
+
+on: push
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout remote head
+        uses: actions/checkout@v2
+
+      - name: Install packages
+        run: |
+          sudo apt-get install doxygen graphviz
+
+      - name: Configure build
+        working-directory: ${{runner.workspace}}
+        env:
+          CXX: ${{matrix.cxx}}
+        run: |
+          cmake -Bbuild -H$GITHUB_WORKSPACE \
+                -DCMAKE_BUILD_TYPE=Release \
+                -DSTRUCTURA_DOCUMENTATION=ON
+
+      - name: Build library & documentation
+        working-directory: ${{runner.workspace}}/build
+        run: cmake --build . --config "Release"
+
+      - name: Deploy documentation
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: "build/Documentation/html"
