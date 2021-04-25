@@ -31,7 +31,7 @@ TEST_CASE("Stack", "[DataTypes][Stack]")
             REQUIRE(stack->size() == 1);
             REQUIRE(stack->peek() == 30);
 
-            int head = stack->pop();
+            const int& head = stack->pop();
             REQUIRE(head == 30);
             REQUIRE(stack->size() == 0);
             REQUIRE_THROWS(stack->peek());
@@ -39,8 +39,7 @@ TEST_CASE("Stack", "[DataTypes][Stack]")
             stack->push(50);
             stack->push(100);
 
-            head = stack->pop();
-            REQUIRE(head == 100);
+            REQUIRE(stack->pop() == 100);
             REQUIRE(stack->size() == 1);
             REQUIRE(stack->peek() == 50);
         }
