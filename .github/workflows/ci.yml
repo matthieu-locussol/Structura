@@ -1,0 +1,33 @@
+name: Compile and test Structura library
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        configs: [Release, Debug]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+      - name: Build project
+        uses: nicledomaS/cmake_build_action@v1.3
+        with:
+          config: ${{ matrix.configs }}
+          submodule_update: ON
+          run_tests: ON
+          unit_test_build: -DSTRUCTURA_TESTS=ON
+          cmake_args: -DFIND_MODULES=ON;-DENABLE_TIDY=ON
+          create_package: OFF
