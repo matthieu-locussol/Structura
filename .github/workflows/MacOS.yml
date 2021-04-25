@@ -37,3 +37,7 @@ jobs:
       - name: Run tests
         working-directory: ${{runner.workspace}}/build
         run: ./StructuraTests
+
+      - name: Check memory leaks
+        working-directory: ${{runner.workspace}}/build
+        run: leaks --atExit -- ./StructuraTest

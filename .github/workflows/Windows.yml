@@ -35,10 +35,3 @@ jobs:
       - name: Run tests
         working-directory: ${{runner.workspace}}/build
         run: .\\${{matrix.configs}}\\StructuraTests.exe
-
-      - name: Setup Valgrind
-        run: choco install valgrind
-
-      - name: Check memory leaks
-        working-directory: ${{runner.workspace}}/build
-        run: valgrind --leak-check=full --error-exitcode=1 .\\${{matrix.configs}}\\StructuraTests.exe
