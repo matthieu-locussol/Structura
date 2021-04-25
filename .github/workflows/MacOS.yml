@@ -1,0 +1,41 @@
+name: Compilation and tests for MacOS
+
+defaults:
+  run:
+    shell: bash
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        cxx:
+          - g++-10
+          - clang++
+        configs: [Release, Debug]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.0.0
+
+      - name: Configure build
+        working-directory: ${{runner.workspace}}
+        run: |
+          cmake -Bbuild \
+                -DCMAKE_BUILD_TYPE=${{matrix.configs}} \
+                -DSTRUCTURA_TESTS=ON
+
+      - name: Build library & tests
+        working-directory: ${{runner.workspace}}/build
+        run: make -j2
+
+      - name: Run tests
+        working-directory: ${{runner.workspace}}/build
+        run: ./StructuraTests
