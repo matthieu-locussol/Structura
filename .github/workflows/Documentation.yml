@@ -19,7 +19,7 @@ jobs:
         env:
           CXX: ${{matrix.cxx}}
         run: |
-          cmake -Bbuild -H$GITHUB_WORKSPACE \
+          cmake -Bbuild \
                 -DCMAKE_BUILD_TYPE=Release \
                 -DSTRUCTURA_DOCUMENTATION=ON
 
