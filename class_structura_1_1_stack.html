@@ -91,12 +91,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a0aa10104d706d01d462dac810cf3e4cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33bf906a75ad0f86615374af1b104c6d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a33bf906a75ad0f86615374af1b104c6d">push</a> (const T &amp;value)</td></tr>
 <tr class="separator:a33bf906a75ad0f86615374af1b104c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794b81383e3209d7a2777c4f205acbe2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a794b81383e3209d7a2777c4f205acbe2">duplicate</a> ()</td></tr>
+<tr class="separator:a794b81383e3209d7a2777c4f205acbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d93eedb46bc68bfde6112bc0e5815f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a9d93eedb46bc68bfde6112bc0e5815f1">swap</a> ()</td></tr>
+<tr class="separator:a9d93eedb46bc68bfde6112bc0e5815f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a895e40f67eb5606412cf37baabdbad40"><td class="memItemLeft" align="right" valign="top">const T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a895e40f67eb5606412cf37baabdbad40">pop</a> ()</td></tr>
 <tr class="separator:a895e40f67eb5606412cf37baabdbad40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a47cdeffd2b00db55e057455da1c67e4b"><td class="memItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a47cdeffd2b00db55e057455da1c67e4b">peek</a> () const</td></tr>
 <tr class="separator:a47cdeffd2b00db55e057455da1c67e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a701c95236dd3910547092de05be86f5d"><td class="memItemLeft" align="right" valign="top">const int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a701c95236dd3910547092de05be86f5d">size</a> () const</td></tr>
 <tr class="separator:a701c95236dd3910547092de05be86f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a669fb4a6837fb70063d25de0479be3d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a669fb4a6837fb70063d25de0479be3d6">isEmpty</a> () const</td></tr>
+<tr class="separator:a669fb4a6837fb70063d25de0479be3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d2cde57c395cc360f74f68abec3740e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_structura_1_1_stack.html#a7d2cde57c395cc360f74f68abec3740e">~Stack</a> ()</td></tr>
 <tr class="separator:a7d2cde57c395cc360f74f68abec3740e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -221,6 +227,51 @@ template&lt;typename T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a794b81383e3209d7a2777c4f205acbe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a794b81383e3209d7a2777c4f205acbe2">&#9670;&nbsp;</a></span>duplicate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_structura_1_1_stack.html">Structura::Stack</a>&lt; T &gt;::duplicate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00033">33</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_size &gt; 0) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">const</span> T value = this-&gt;_head-&gt;value;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            this-&gt;<a class="code" href="class_structura_1_1_stack.html#a33bf906a75ad0f86615374af1b104c6d">push</a>(value);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a669fb4a6837fb70063d25de0479be3d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a669fb4a6837fb70063d25de0479be3d6">&#9670;&nbsp;</a></span>isEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_structura_1_1_stack.html">Structura::Stack</a>&lt; T &gt;::isEmpty</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00093">93</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
+<div class="fragment"><div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">return</span> this-&gt;_size == 0;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a0aa10104d706d01d462dac810cf3e4cc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0aa10104d706d01d462dac810cf3e4cc">&#9670;&nbsp;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -291,14 +342,14 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00055">55</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
-<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_size == 0) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Can not peek from an empty stack!&quot;</span>);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> this-&gt;_head-&gt;value;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00077">77</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
+<div class="fragment"><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_size == 0) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Can not peek from an empty stack!&quot;</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> this-&gt;_head-&gt;value;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -316,25 +367,25 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00033">33</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_size == 0) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Can not pop from an empty stack!&quot;</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_head-&gt;next == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            this-&gt;_tail = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">const</span> Node* node = this-&gt;_head;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        this-&gt;_head = this-&gt;_head-&gt;next;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        --this-&gt;_size;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">const</span> T value = node-&gt;value;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">delete</span> node;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> value;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00055">55</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
+<div class="fragment"><div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_size == 0) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">throw</span> std::out_of_range(<span class="stringliteral">&quot;Can not pop from an empty stack!&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_head-&gt;next == <span class="keyword">nullptr</span>) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            this-&gt;_tail = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">const</span> Node* node = this-&gt;_head;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        this-&gt;_head = this-&gt;_head-&gt;next;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        --this-&gt;_size;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">const</span> T value = node-&gt;value;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">delete</span> node;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span> value;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -384,10 +435,38 @@ template&lt;typename T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00065">65</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
-<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> this-&gt;_size;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00087">87</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
+<div class="fragment"><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">return</span> this-&gt;_size;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9d93eedb46bc68bfde6112bc0e5815f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d93eedb46bc68bfde6112bc0e5815f1">&#9670;&nbsp;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_structura_1_1_stack.html">Structura::Stack</a>&lt; T &gt;::swap</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_stack_8inl_source.html#l00042">42</a> of file <a class="el" href="_stack_8inl_source.html">Stack.inl</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (this-&gt;_size &gt;= 2) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            Node* oldHead = this-&gt;_head;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Node* oldSecond = this-&gt;_head-&gt;next;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            this-&gt;_head = oldSecond;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            oldHead-&gt;next = oldSecond-&gt;next;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            this-&gt;_head-&gt;next = oldHead;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -396,6 +475,7 @@ template&lt;typename T &gt; </div>
 <li>/home/runner/work/Structura/Structura/includes/DataTypes/<a class="el" href="_stack_8inl_source.html">Stack.inl</a></li>
 </ul>
 </div><!-- contents -->
+<div class="ttc" id="aclass_structura_1_1_stack_html_a33bf906a75ad0f86615374af1b104c6d"><div class="ttname"><a href="class_structura_1_1_stack.html#a33bf906a75ad0f86615374af1b104c6d">Structura::Stack::push</a></div><div class="ttdeci">void push(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00020">Stack.inl:20</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

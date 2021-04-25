@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['structura_15',['Structura',['../namespace_structura.html',1,'']]]
+  ['structura_18',['Structura',['../namespace_structura.html',1,'']]]
 ];

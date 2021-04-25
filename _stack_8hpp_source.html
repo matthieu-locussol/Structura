@@ -87,43 +87,49 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="class_structura_1_1_stack.html">Stack</a>&amp; <a class="code" href="class_structura_1_1_stack.html#a7ef23fcc1081ca7121e297dde4e6b917">operator=</a>(<span class="keyword">const</span> <a class="code" href="class_structura_1_1_stack.html">Stack</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_structura_1_1_stack.html#a33bf906a75ad0f86615374af1b104c6d">push</a>(<span class="keyword">const</span> T&amp; value);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">const</span> T <a class="code" href="class_structura_1_1_stack.html#a895e40f67eb5606412cf37baabdbad40">pop</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">const</span> T&amp; <a class="code" href="class_structura_1_1_stack.html#a47cdeffd2b00db55e057455da1c67e4b">peek</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code" href="class_structura_1_1_stack.html#a701c95236dd3910547092de05be86f5d">size</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_structura_1_1_stack.html#a7d2cde57c395cc360f74f68abec3740e">~Stack</a>();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">struct </span>Node {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            T value;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            Node* next = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            Node(<span class="keyword">const</span> T&amp; value, Node* next) : value(value), next(next){};</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        };</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_structura_1_1_stack.html#a794b81383e3209d7a2777c4f205acbe2">duplicate</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="class_structura_1_1_stack.html#a9d93eedb46bc68bfde6112bc0e5815f1">swap</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">const</span> T <a class="code" href="class_structura_1_1_stack.html#a895e40f67eb5606412cf37baabdbad40">pop</a>();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">const</span> T&amp; <a class="code" href="class_structura_1_1_stack.html#a47cdeffd2b00db55e057455da1c67e4b">peek</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code" href="class_structura_1_1_stack.html#a701c95236dd3910547092de05be86f5d">size</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="class_structura_1_1_stack.html#a669fb4a6837fb70063d25de0479be3d6">isEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_structura_1_1_stack.html#a7d2cde57c395cc360f74f68abec3740e">~Stack</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">struct </span>Node {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            T value;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            Node* next = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordtype">int</span> _size = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        Node* _head = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        Node* _tail = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> _print(<span class="keyword">const</span> Node* node) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    };</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <span class="comment">// namespace Structura</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_stack_8inl.html">DataTypes/Stack.inl</a>&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            Node(<span class="keyword">const</span> T&amp; value, Node* next) : value(value), next(next){};</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> _size = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        Node* _head = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        Node* _tail = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> _print(<span class="keyword">const</span> Node* node) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// namespace Structura</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_stack_8inl.html">DataTypes/Stack.inl</a>&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespace_structura_html"><div class="ttname"><a href="namespace_structura.html">Structura</a></div><div class="ttdef"><b>Definition:</b> <a href="_stack_8hpp_source.html#l00006">Stack.hpp:6</a></div></div>
 <div class="ttc" id="aclass_structura_1_1_stack_html"><div class="ttname"><a href="class_structura_1_1_stack.html">Structura::Stack</a></div><div class="ttdef"><b>Definition:</b> <a href="_stack_8hpp_source.html#l00008">Stack.hpp:8</a></div></div>
+<div class="ttc" id="aclass_structura_1_1_stack_html_a9d93eedb46bc68bfde6112bc0e5815f1"><div class="ttname"><a href="class_structura_1_1_stack.html#a9d93eedb46bc68bfde6112bc0e5815f1">Structura::Stack::swap</a></div><div class="ttdeci">void swap()</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00042">Stack.inl:42</a></div></div>
+<div class="ttc" id="aclass_structura_1_1_stack_html_a794b81383e3209d7a2777c4f205acbe2"><div class="ttname"><a href="class_structura_1_1_stack.html#a794b81383e3209d7a2777c4f205acbe2">Structura::Stack::duplicate</a></div><div class="ttdeci">void duplicate()</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00033">Stack.inl:33</a></div></div>
 <div class="ttc" id="aclass_structura_1_1_stack_html_a7ef23fcc1081ca7121e297dde4e6b917"><div class="ttname"><a href="class_structura_1_1_stack.html#a7ef23fcc1081ca7121e297dde4e6b917">Structura::Stack::operator=</a></div><div class="ttdeci">Stack &amp; operator=(Stack &amp;&amp;)=default</div></div>
 <div class="ttc" id="aclass_structura_1_1_stack_html_a33bf906a75ad0f86615374af1b104c6d"><div class="ttname"><a href="class_structura_1_1_stack.html#a33bf906a75ad0f86615374af1b104c6d">Structura::Stack::push</a></div><div class="ttdeci">void push(const T &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00020">Stack.inl:20</a></div></div>
-<div class="ttc" id="aclass_structura_1_1_stack_html_a47cdeffd2b00db55e057455da1c67e4b"><div class="ttname"><a href="class_structura_1_1_stack.html#a47cdeffd2b00db55e057455da1c67e4b">Structura::Stack::peek</a></div><div class="ttdeci">const T &amp; peek() const</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00055">Stack.inl:55</a></div></div>
+<div class="ttc" id="aclass_structura_1_1_stack_html_a47cdeffd2b00db55e057455da1c67e4b"><div class="ttname"><a href="class_structura_1_1_stack.html#a47cdeffd2b00db55e057455da1c67e4b">Structura::Stack::peek</a></div><div class="ttdeci">const T &amp; peek() const</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00077">Stack.inl:77</a></div></div>
 <div class="ttc" id="aclass_structura_1_1_stack_html_a7d2cde57c395cc360f74f68abec3740e"><div class="ttname"><a href="class_structura_1_1_stack.html#a7d2cde57c395cc360f74f68abec3740e">Structura::Stack::~Stack</a></div><div class="ttdeci">~Stack()</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00005">Stack.inl:5</a></div></div>
 <div class="ttc" id="aclass_structura_1_1_stack_html_a11fac0bad1137ff6ffa5e83cc2c6f092"><div class="ttname"><a href="class_structura_1_1_stack.html#a11fac0bad1137ff6ffa5e83cc2c6f092">Structura::Stack::Stack</a></div><div class="ttdeci">Stack()=default</div></div>
+<div class="ttc" id="aclass_structura_1_1_stack_html_a669fb4a6837fb70063d25de0479be3d6"><div class="ttname"><a href="class_structura_1_1_stack.html#a669fb4a6837fb70063d25de0479be3d6">Structura::Stack::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00093">Stack.inl:93</a></div></div>
 <div class="ttc" id="a_stack_8inl_html"><div class="ttname"><a href="_stack_8inl.html">Stack.inl</a></div></div>
-<div class="ttc" id="aclass_structura_1_1_stack_html_a701c95236dd3910547092de05be86f5d"><div class="ttname"><a href="class_structura_1_1_stack.html#a701c95236dd3910547092de05be86f5d">Structura::Stack::size</a></div><div class="ttdeci">const int &amp; size() const</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00065">Stack.inl:65</a></div></div>
-<div class="ttc" id="aclass_structura_1_1_stack_html_a895e40f67eb5606412cf37baabdbad40"><div class="ttname"><a href="class_structura_1_1_stack.html#a895e40f67eb5606412cf37baabdbad40">Structura::Stack::pop</a></div><div class="ttdeci">const T pop()</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00033">Stack.inl:33</a></div></div>
+<div class="ttc" id="aclass_structura_1_1_stack_html_a701c95236dd3910547092de05be86f5d"><div class="ttname"><a href="class_structura_1_1_stack.html#a701c95236dd3910547092de05be86f5d">Structura::Stack::size</a></div><div class="ttdeci">const int &amp; size() const</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00087">Stack.inl:87</a></div></div>
+<div class="ttc" id="aclass_structura_1_1_stack_html_a895e40f67eb5606412cf37baabdbad40"><div class="ttname"><a href="class_structura_1_1_stack.html#a895e40f67eb5606412cf37baabdbad40">Structura::Stack::pop</a></div><div class="ttdeci">const T pop()</div><div class="ttdef"><b>Definition:</b> <a href="_stack_8inl_source.html#l00055">Stack.inl:55</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operator_3d_20',['operator=',['../class_structura_1_1_stack.html#a7ef23fcc1081ca7121e297dde4e6b917',1,'Structura::Stack::operator=(Stack &amp;&amp;)=default'],['../class_structura_1_1_stack.html#a0aa10104d706d01d462dac810cf3e4cc',1,'Structura::Stack::operator=(const Stack &amp;)=delete']]]
+  ['duplicate_23',['duplicate',['../class_structura_1_1_stack.html#a794b81383e3209d7a2777c4f205acbe2',1,'Structura::Stack']]]
 ];

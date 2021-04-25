@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['size_24',['size',['../class_structura_1_1_stack.html#a701c95236dd3910547092de05be86f5d',1,'Structura::Stack']]],
-  ['stack_25',['Stack',['../class_structura_1_1_stack.html#a11fac0bad1137ff6ffa5e83cc2c6f092',1,'Structura::Stack::Stack()=default'],['../class_structura_1_1_stack.html#a86da3ada133ca70570c9dfa9eb1fe2eb',1,'Structura::Stack::Stack(Stack &amp;&amp;)=default'],['../class_structura_1_1_stack.html#a692debc76110a7c654e339a8f8f8f6ca',1,'Structura::Stack::Stack(const Stack &amp;)=delete']]]
+  ['operator_3d_25',['operator=',['../class_structura_1_1_stack.html#a7ef23fcc1081ca7121e297dde4e6b917',1,'Structura::Stack::operator=(Stack &amp;&amp;)=default'],['../class_structura_1_1_stack.html#a0aa10104d706d01d462dac810cf3e4cc',1,'Structura::Stack::operator=(const Stack &amp;)=delete']]]
 ];
