@@ -1,0 +1,36 @@
+name: Linux
+
+defaults:
+  run:
+    shell: bash
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cxx:
+          - g++-10
+        configs: [Release, Debug]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+
+      - name: Configure build
+        working-directory: ${{runner.workspace}}
+        run: |
+          cmake -Bbuild -H$GITHUB_WORKSPACE \
+                -DCMAKE_BUILD_TYPE=${{matrix.configs}} \
+                -DSTRUCTURA_TESTS=ON
+
+      - name: Build library & tests
+        working-directory: ${{runner.workspace}}/build
+        run: make -j2
+
+      - name: Run tests
+        working-directory: ${{runner.workspace}}/build
+        run: ./StructuraTests
