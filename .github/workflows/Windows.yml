@@ -30,7 +30,7 @@ jobs:
 
       - name: Build library & tests
         working-directory: ${{runner.workspace}}/build
-        run: msbuild.exe .\Structura.sln
+        run: msbuild.exe Structura.sln
 
       - name: Run tests
         working-directory: ${{runner.workspace}}/build
