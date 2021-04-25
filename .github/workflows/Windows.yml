@@ -35,4 +35,4 @@ jobs:
 
       - name: Run tests
         working-directory: ${{runner.workspace}}/build
-        run: ls && pwd && .\x64\${{matrix.configs}}\StructuraTests.exe
+        run: ls && pwd && .\\x64\\${{matrix.configs}}\\StructuraTests.exe
