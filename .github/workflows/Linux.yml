@@ -37,6 +37,9 @@ jobs:
         working-directory: ${{runner.workspace}}/build
         run: ./StructuraTests
 
+      - name: Setup Valgrind
+        run: sudo apt-get install -y valgrind
+
       - name: Check memory leaks
         working-directory: ${{runner.workspace}}/build
         run: valgrind --leak-check=full --error-exitcode=1 ./StructuraTests
