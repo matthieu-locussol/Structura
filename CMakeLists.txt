@@ -1,7 +1,11 @@
 CMAKE_MINIMUM_REQUIRED( VERSION 3.0.0 )
 
 # Configure project
-PROJECT( Structura )
+PROJECT( Structura VERSION 1.0.0 )
+
+OPTION( STRUCTURA_TESTS         "Build Structura test suite" OFF )
+OPTION( STRUCTURA_STATIC        "Build Structura library as a static library" OFF )
+OPTION( STRUCTURA_DOCUMENTATION "Build Structura documentation" OFF )
 
 # Configuration CMake Module Path
 SET( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake" )
@@ -25,11 +29,11 @@ IF( NOT CMAKE_PREFIX_PATH )
 ENDIF()
 
 # Configure Structura sources
-INCLUDE_DIRECTORIES( "${CMAKE_CURRENT_SOURCE_DIR}/src" )
+INCLUDE_DIRECTORIES( "${CMAKE_CURRENT_SOURCE_DIR}/includes" )
 
-FILE( GLOB_RECURSE STRUCTURA_SOURCES "src/**/*.cpp" )
-FILE( GLOB_RECURSE STRUCTURA_HEADERS "src/**/*.hpp" )
-FILE( GLOB_RECURSE STRUCTURA_INLINES "src/**/*.inl" )
+FILE( GLOB_RECURSE STRUCTURA_SOURCES "sources/*.cpp" "sources/**/*.cpp" )
+FILE( GLOB_RECURSE STRUCTURA_HEADERS "includes/*.hpp" "includes/**/*.hpp" )
+FILE( GLOB_RECURSE STRUCTURA_INLINES "includes/*.inl" "includes/**/*.inl" )
 
 FILE(
     GLOB_RECURSE
@@ -39,27 +43,26 @@ FILE(
     ${STRUCTURA_INLINES}
 )
 
-# Configuring Catch2
-ADD_SUBDIRECTORY( "${CMAKE_CURRENT_SOURCE_DIR}/submodules/Catch2" )
-
 # Configuring Doxygen target
-FIND_PACKAGE( Doxygen )
+IF( STRUCTURA_DOCUMENTATION )
+	FIND_PACKAGE( Doxygen )
 
-IF( DOXYGEN_FOUND )
-    SET( DOXYGEN_IN  ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in )
-    SET( DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/docs/Doxyfile )
+	IF( DOXYGEN_FOUND )
+		SET( DOXYGEN_IN  ${CMAKE_CURRENT_SOURCE_DIR}/docs/Doxyfile.in )
+		SET( DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/docs/Doxyfile )
 
-    CONFIGURE_FILE( ${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY )
+		CONFIGURE_FILE( ${DOXYGEN_IN} ${DOXYGEN_OUT} @ONLY )
 
-    ADD_CUSTOM_TARGET(
-      Documentation ALL
-   	COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
-      WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/docs
-      COMMENT "Generating documentation using Doxygen."
-      VERBATIM
-    )
-ELSE()
-    MESSAGE( STATUS "${PROJECT_NAME}: Doxygen needs to be installed to generate documentation." )
+		ADD_CUSTOM_TARGET(
+			Documentation ALL
+			COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_OUT}
+			WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/docs
+			COMMENT "Generating documentation using Doxygen."
+			VERBATIM
+		)
+	ELSE()
+		MESSAGE( STATUS "${PROJECT_NAME}: Doxygen needs to be installed to generate documentation." )
+	ENDIF()
 ENDIF()
 
 # Configuring linking
@@ -72,15 +75,20 @@ ENDIF()
 # Adding library
 ADD_LIBRARY( "Structura" "${STRUCTURA_LINKING}" ${STRUCTURA_FILES} )
 
-# Adding tests
-FILE( GLOB_RECURSE STRUCTURA_TESTS_SOURCES "tests/**/*.cpp" )
+IF( STRUCTURA_TESTS )
+	# Configuring Catch2
+	ADD_SUBDIRECTORY( "${CMAKE_CURRENT_SOURCE_DIR}/submodules/Catch2" )
 
-FILE(
-    GLOB_RECURSE
-    STRUCTURA_TESTS_FILES
-    ${STRUCTURA_TESTS_SOURCES}
-)
+	# Adding tests
+	FILE( GLOB_RECURSE STRUCTURA_TESTS_SOURCES "tests/**/*.cpp" )
 
-ADD_EXECUTABLE( "StructuraTests" ${STRUCTURA_TESTS_FILES} )
-TARGET_LINK_LIBRARIES( "StructuraTests" PRIVATE "Structura" )
-TARGET_LINK_LIBRARIES( "StructuraTests" PRIVATE Catch2::Catch2WithMain )
+	FILE(
+		GLOB_RECURSE
+		STRUCTURA_TESTS_FILES
+		${STRUCTURA_TESTS_SOURCES}
+	)
+
+	ADD_EXECUTABLE( "StructuraTests" ${STRUCTURA_TESTS_FILES} )
+	TARGET_LINK_LIBRARIES( "StructuraTests" PRIVATE "Structura" )
+	TARGET_LINK_LIBRARIES( "StructuraTests" PRIVATE Catch2::Catch2WithMain )
+ENDIF()
