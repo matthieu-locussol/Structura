@@ -1,3 +1,9 @@
+---
+name: Feature request
+about: Use this template for raising a feature request
+labels: "enhancement"
+---
+
 ## System (please complete the following information):
 
 -  OS: [e.g. Windows]
