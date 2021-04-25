@@ -37,7 +37,7 @@ jobs:
         run: .\\${{matrix.configs}}\\StructuraTests.exe
 
       - name: Setup Valgrind
-        run: sudo apt-get install -y valgrind
+        run: choco install valgrind
 
       - name: Check memory leaks
         working-directory: ${{runner.workspace}}/build
