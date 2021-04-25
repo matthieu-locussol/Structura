@@ -27,7 +27,10 @@ jobs:
         working-directory: ${{runner.workspace}}/build
         run: cmake --build . --config "Release"
 
-      - name: Deploy documentation
+      - name: Debugging
+        run: ls && pwd && ls build && pwd
+
+      - name: Deploy Doc
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.ACCESS_TOKEN }}
