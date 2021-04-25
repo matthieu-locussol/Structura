@@ -27,7 +27,7 @@ jobs:
 
       - name: Build library & tests
         working-directory: ${{runner.workspace}}/build
-        run: ls && pwd && make -j2
+        run: msbuild .\Structura.sln
 
       - name: Run tests
         working-directory: ${{runner.workspace}}/build
