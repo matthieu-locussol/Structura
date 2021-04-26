@@ -1,5 +1,3 @@
-#include <iostream>
-
 namespace Structura {
     template <typename T>
     Stack<T>::~Stack()
@@ -8,7 +6,6 @@ namespace Structura {
 
         while (current != nullptr) {
             const Node* item = current;
-            _inlinePrint(current);
             current = current->_next;
             delete item;
         }
@@ -20,10 +17,6 @@ namespace Structura {
     void Stack<T>::push(const T& value)
     {
         Node* node = new Node(value, this->_head);
-
-        if (this->_head == nullptr) {
-            this->_tail = node;
-        }
 
         this->_head = node;
         ++this->_size;
@@ -48,10 +41,6 @@ namespace Structura {
             this->_head = oldSecond;
             oldHead->_next = oldSecond->_next;
             this->_head->_next = oldHead;
-
-            if (this->_size == 2) {
-                this->_tail = oldHead;
-            }
         }
     }
 
@@ -68,10 +57,30 @@ namespace Structura {
             }
             Node* tail = tailPrevious->_next;
 
-            this->_tail->_next = this->_head;
+            tail->_next = this->_head;
             tailPrevious->_next = nullptr;
             this->_head = tail;
-            this->_tail = tailPrevious;
+            tail = tailPrevious;
+        }
+    }
+
+    template <typename T>
+    void Stack<T>::rotateRight()
+    {
+        if (this->_size == 2) {
+            this->swap();
+        }
+        else if (this->_size >= 3) {
+            Node* tailPrevious = this->_head->_next;
+            while (tailPrevious->_next->_next != nullptr) {
+                tailPrevious = tailPrevious->_next;
+            }
+            Node* tail = tailPrevious->_next;
+
+            tail->_next = this->_head;
+            this->_head = this->_head->_next;
+            tail = tail->_next;
+            tail->_next = nullptr;
         }
     }
 
@@ -81,10 +90,6 @@ namespace Structura {
     {
         if (this->_size == 0) {
             throw std::out_of_range("Can not pop from an empty stack!");
-        }
-
-        if (this->_head->_next == nullptr) {
-            this->_tail = nullptr;
         }
 
         const Node* node = this->_head;
@@ -117,16 +122,5 @@ namespace Structura {
     bool Stack<T>::isEmpty() const
     {
         return this->_size == 0;
-    }
-
-    template <typename T>
-    void Stack<T>::_inlinePrint(const Node* node) const
-    {
-        if (node != nullptr) {
-            std::cout << "=== (" << node << ", " << node->_value << ", " << node->_next << ")" << std::endl;
-        }
-        else {
-            std::cout << "NULLPTR" << std::endl;
-        }
     }
 } // namespace Structura
