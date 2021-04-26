@@ -77,6 +77,11 @@ TEST_CASE("Stack", "[DataTypes][Stack]")
             stack->swap();
             REQUIRE(stack->size() == 3);
             REQUIRE(stack->peek() == 80);
+
+            stack->swap();
+            REQUIRE(stack->pop() == 95);
+            REQUIRE(stack->pop() == 80);
+            REQUIRE(stack->pop() == 90);
         }
 
         delete stack;

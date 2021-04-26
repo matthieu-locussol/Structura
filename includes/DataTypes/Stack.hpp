@@ -29,8 +29,9 @@ namespace Structura {
         struct Node {
             T _value;
             Node* _next = nullptr;
+            Node* _previous = nullptr;
 
-            Node(const T& value, Node* next) : _value(value), _next(next){};
+            Node(const T& value, Node* next, Node* previous) : _value(value), _next(next), _previous(previous){};
         };
 
         int _size = 0;

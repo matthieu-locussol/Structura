@@ -19,10 +19,13 @@ namespace Structura {
     template <typename T>
     void Stack<T>::push(const T& value)
     {
-        Node* node = new Node(value, this->_head);
+        Node* node = new Node(value, this->_head, nullptr);
 
         if (this->_head == nullptr) {
             this->_tail = node;
+        }
+        else {
+            this->_head->_previous = node;
         }
 
         this->_head = node;
@@ -47,7 +50,13 @@ namespace Structura {
 
             this->_head = oldSecond;
             oldHead->_next = oldSecond->_next;
+            oldHead->_previous = oldSecond;
             this->_head->_next = oldHead;
+            this->_head->_previous = nullptr;
+
+            if (this->_head->_next->_next != nullptr) {
+                this->_head->_next->_next->_previous = this->_head->_next;
+            }
         }
     }
 
@@ -61,6 +70,9 @@ namespace Structura {
 
         if (this->_head->_next == nullptr) {
             this->_tail = nullptr;
+        }
+        else {
+            this->_head->_next->_previous = nullptr;
         }
 
         const Node* node = this->_head;
@@ -102,5 +114,6 @@ namespace Structura {
         std::cout << "Me: " << node << std::endl;
         std::cout << "Value: " << node->_value << std::endl;
         std::cout << "Next: " << node->_next << std::endl;
+        std::cout << "Previous: " << node->_previous << std::endl;
     }
 } // namespace Structura
