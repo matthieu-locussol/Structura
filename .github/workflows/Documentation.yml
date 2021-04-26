@@ -28,7 +28,7 @@ jobs:
               cd Structura/build
               cmake --build . --config "Release"
 
-         - name: Deploy Doc
+         - name: Deploy documentation
            uses: peaceiris/actions-gh-pages@v3
            with:
               github_token: ${{ secrets.ACCESS_TOKEN }}
