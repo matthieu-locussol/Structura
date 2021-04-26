@@ -8,7 +8,7 @@ namespace Structura {
 
         while (current != nullptr) {
             const Node* item = current;
-            _print(current);
+            _inlinePrint(current);
             current = current->_next;
             delete item;
         }
@@ -19,13 +19,10 @@ namespace Structura {
     template <typename T>
     void Stack<T>::push(const T& value)
     {
-        Node* node = new Node(value, this->_head, nullptr);
+        Node* node = new Node(value, this->_head);
 
         if (this->_head == nullptr) {
             this->_tail = node;
-        }
-        else {
-            this->_head->_previous = node;
         }
 
         this->_head = node;
@@ -50,13 +47,31 @@ namespace Structura {
 
             this->_head = oldSecond;
             oldHead->_next = oldSecond->_next;
-            oldHead->_previous = oldSecond;
             this->_head->_next = oldHead;
-            this->_head->_previous = nullptr;
 
-            if (this->_head->_next->_next != nullptr) {
-                this->_head->_next->_next->_previous = this->_head->_next;
+            if (this->_size == 2) {
+                this->_tail = oldHead;
             }
+        }
+    }
+
+    template <typename T>
+    void Stack<T>::rotateLeft()
+    {
+        if (this->_size == 2) {
+            this->swap();
+        }
+        else if (this->_size >= 3) {
+            Node* tailPrevious = this->_head->_next;
+            while (tailPrevious->_next->_next != nullptr) {
+                tailPrevious = tailPrevious->_next;
+            }
+            Node* tail = tailPrevious->_next;
+
+            this->_tail->_next = this->_head;
+            tailPrevious->_next = nullptr;
+            this->_head = tail;
+            this->_tail = tailPrevious;
         }
     }
 
@@ -70,9 +85,6 @@ namespace Structura {
 
         if (this->_head->_next == nullptr) {
             this->_tail = nullptr;
-        }
-        else {
-            this->_head->_next->_previous = nullptr;
         }
 
         const Node* node = this->_head;
@@ -108,12 +120,13 @@ namespace Structura {
     }
 
     template <typename T>
-    void Stack<T>::_print(const Node* node) const
+    void Stack<T>::_inlinePrint(const Node* node) const
     {
-        std::cout << "============================" << std::endl;
-        std::cout << "Me: " << node << std::endl;
-        std::cout << "Value: " << node->_value << std::endl;
-        std::cout << "Next: " << node->_next << std::endl;
-        std::cout << "Previous: " << node->_previous << std::endl;
+        if (node != nullptr) {
+            std::cout << "=== (" << node << ", " << node->_value << ", " << node->_next << ")" << std::endl;
+        }
+        else {
+            std::cout << "NULLPTR" << std::endl;
+        }
     }
 } // namespace Structura

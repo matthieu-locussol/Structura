@@ -17,6 +17,7 @@ namespace Structura {
         void push(const T& value);
         void duplicate();
         void swap();
+        void rotateLeft();
 
         const T pop();
         const T& peek() const;
@@ -29,9 +30,8 @@ namespace Structura {
         struct Node {
             T _value;
             Node* _next = nullptr;
-            Node* _previous = nullptr;
 
-            Node(const T& value, Node* next, Node* previous) : _value(value), _next(next), _previous(previous){};
+            Node(const T& value, Node* next) : _value(value), _next(next){};
         };
 
         int _size = 0;
@@ -39,6 +39,7 @@ namespace Structura {
         Node* _tail = nullptr;
 
         void _print(const Node* node) const;
+        void _inlinePrint(const Node* node) const;
     };
 } // namespace Structura
 

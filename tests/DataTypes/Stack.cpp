@@ -84,6 +84,37 @@ TEST_CASE("Stack", "[DataTypes][Stack]")
             REQUIRE(stack->pop() == 90);
         }
 
+        SECTION("RotateLeft method")
+        {
+            stack->rotateLeft();
+            REQUIRE(stack->isEmpty());
+            REQUIRE(stack->size() == 0);
+
+            stack->push(11);
+            stack->rotateLeft();
+            REQUIRE(stack->size() == 1);
+            REQUIRE(stack->peek() == 11);
+
+            stack->push(22);
+            stack->rotateLeft();
+            REQUIRE(stack->size() == 2);
+            REQUIRE(stack->peek() == 11);
+
+            stack->push(33);
+            stack->push(44);
+            REQUIRE(stack->size() == 4);
+            stack->rotateLeft();
+            REQUIRE(stack->peek() == 22);
+            stack->rotateLeft();
+            REQUIRE(stack->peek() == 11);
+            stack->rotateLeft();
+            REQUIRE(stack->peek() == 33);
+            stack->rotateLeft();
+            REQUIRE(stack->peek() == 44);
+            stack->rotateLeft();
+            REQUIRE(stack->peek() == 22);
+        }
+
         delete stack;
     }
 }
