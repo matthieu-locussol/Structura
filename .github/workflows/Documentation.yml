@@ -3,36 +3,33 @@ name: Documentation
 on: push
 
 jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout remote head
-        uses: actions/checkout@v2
+   deploy:
+      name: Deploy
+      runs-on: ubuntu-latest
+      steps:
+         - name: Checkout remote head
+           uses: actions/checkout@v2
 
-      - name: Install packages
-        run: |
-          sudo apt-get install doxygen graphviz
+         - name: Install packages
+           run: |
+              sudo apt-get install doxygen graphviz
 
-      - name: Configure build
-        working-directory: ${{runner.workspace}}
-        run: |
-          cd Structura
-          cmake -Bbuild \
-                -DCMAKE_BUILD_TYPE=Release \
-                -DSTRUCTURA_DOCUMENTATION=ON
+         - name: Configure build
+           working-directory: ${{runner.workspace}}
+           run: |
+              cd Structura
+              cmake -Bbuild \
+                    -DCMAKE_BUILD_TYPE=Release \
+                    -DSTRUCTURA_DOCUMENTATION=ON
 
-      - name: Build library & documentation
-        working-directory: ${{runner.workspace}}
-        run: |
-          cd Structura/build
-          cmake --build . --config "Release"
+         - name: Build library & documentation
+           working-directory: ${{runner.workspace}}
+           run: |
+              cd Structura/build
+              cmake --build . --config "Release"
 
-      - name: Debugging
-        run: ls && pwd && ls build && pwd
-
-      - name: Deploy Doc
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.ACCESS_TOKEN }}
-          publish_dir: "build/Documentation/html"
+         - name: Deploy Doc
+           uses: peaceiris/actions-gh-pages@v3
+           with:
+              github_token: ${{ secrets.ACCESS_TOKEN }}
+              publish_dir: "build/Documentation/html"
