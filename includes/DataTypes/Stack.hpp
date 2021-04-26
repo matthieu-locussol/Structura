@@ -27,10 +27,10 @@ namespace Structura {
 
     private:
         struct Node {
-            T value;
-            Node* next = nullptr;
+            T _value;
+            Node* _next = nullptr;
 
-            Node(const T& value, Node* next) : value(value), next(next){};
+            Node(const T& value, Node* next) : _value(value), _next(next){};
         };
 
         int _size = 0;

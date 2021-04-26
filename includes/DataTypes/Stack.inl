@@ -9,7 +9,7 @@ namespace Structura {
         while (current != nullptr) {
             const Node* item = current;
             _print(current);
-            current = current->next;
+            current = current->_next;
             delete item;
         }
 
@@ -33,7 +33,7 @@ namespace Structura {
     void Stack<T>::duplicate()
     {
         if (this->_size > 0) {
-            const T value = this->_head->value;
+            const T value = this->_head->_value;
             this->push(value);
         }
     }
@@ -43,11 +43,11 @@ namespace Structura {
     {
         if (this->_size >= 2) {
             Node* oldHead = this->_head;
-            Node* oldSecond = this->_head->next;
+            Node* oldSecond = this->_head->_next;
 
             this->_head = oldSecond;
-            oldHead->next = oldSecond->next;
-            this->_head->next = oldHead;
+            oldHead->_next = oldSecond->_next;
+            this->_head->_next = oldHead;
         }
     }
 
@@ -59,15 +59,15 @@ namespace Structura {
             throw std::out_of_range("Can not pop from an empty stack!");
         }
 
-        if (this->_head->next == nullptr) {
+        if (this->_head->_next == nullptr) {
             this->_tail = nullptr;
         }
 
         const Node* node = this->_head;
-        this->_head = this->_head->next;
+        this->_head = this->_head->_next;
         --this->_size;
 
-        const T value = node->value;
+        const T value = node->_value;
         delete node;
 
         return value;
@@ -80,7 +80,7 @@ namespace Structura {
             throw std::out_of_range("Can not peek from an empty stack!");
         }
 
-        return this->_head->value;
+        return this->_head->_value;
     }
 
     template <typename T>
@@ -100,7 +100,7 @@ namespace Structura {
     {
         std::cout << "============================" << std::endl;
         std::cout << "Me: " << node << std::endl;
-        std::cout << "Value: " << node->value << std::endl;
-        std::cout << "Next: " << node->next << std::endl;
+        std::cout << "Value: " << node->_value << std::endl;
+        std::cout << "Next: " << node->_next << std::endl;
     }
 } // namespace Structura
