@@ -1,38 +1,38 @@
 name: Windows
 
 defaults:
-  run:
-    shell: bash
+   run:
+      shell: bash
 
 on: push
 
 jobs:
-  build:
-    name: Build
-    runs-on: windows-latest
-    strategy:
-      matrix:
-        configs: [Release, Debug]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          submodules: recursive
+   build:
+      name: Build
+      runs-on: windows-latest
+      strategy:
+         matrix:
+            configs: [Release, Debug]
+      steps:
+         - name: Checkout
+           uses: actions/checkout@v2
+           with:
+              submodules: recursive
 
-      - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1
+         - name: Setup MSBuild
+           uses: microsoft/setup-msbuild@v1
 
-      - name: Configure build
-        working-directory: ${{runner.workspace}}
-        run: |
-          cmake -Bbuild -H$GITHUB_WORKSPACE \
-                -DCMAKE_BUILD_TYPE=${{matrix.configs}} \
-                -DSTRUCTURA_TESTS=ON
+         - name: Configure build
+           working-directory: ${{runner.workspace}}
+           run: |
+              cmake -Bbuild -H$GITHUB_WORKSPACE \
+                    -DCMAKE_BUILD_TYPE=${{matrix.configs}} \
+                    -DSTRUCTURA_TESTS=ON
 
-      - name: Build library & tests
-        working-directory: ${{runner.workspace}}/build
-        run: cmake --build . --config "${{matrix.configs}}"
+         - name: Build library & tests
+           working-directory: ${{runner.workspace}}/build
+           run: cmake --build . --config "${{matrix.configs}}"
 
-      - name: Run tests
-        working-directory: ${{runner.workspace}}/build
-        run: .\\${{matrix.configs}}\\StructuraTests.exe
+         - name: Run tests
+           working-directory: ${{runner.workspace}}/build
+           run: .\\${{matrix.configs}}\\StructuraTests.exe
