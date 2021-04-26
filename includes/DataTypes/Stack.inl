@@ -1,3 +1,5 @@
+#include <stdexcept>
+
 namespace Structura {
     template <typename T>
     Stack<T>::~Stack()
