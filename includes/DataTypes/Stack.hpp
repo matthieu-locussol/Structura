@@ -3,7 +3,7 @@
 #ifndef DATATYPES_STACK_HPP
 #define DATATYPES_STACK_HPP
 
-namespace Structura {
+namespace St {
     template <typename T>
     class Stack {
     public:
@@ -14,7 +14,7 @@ namespace Structura {
         Stack& operator=(Stack&&) = default;
         Stack& operator=(const Stack&) = delete;
 
-        void push(const T& value);
+        int push(const T& value);
         void duplicate();
         void swap();
         void rotateLeft();
@@ -37,11 +37,8 @@ namespace Structura {
 
         int _size = 0;
         Node* _head = nullptr;
-
-        void _print(const Node* node) const;
-        void _inlinePrint(const Node* node) const;
     };
-} // namespace Structura
+} // namespace St
 
 #include <DataTypes/Stack.inl>
 

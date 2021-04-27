@@ -3,7 +3,7 @@
 
 TEST_CASE("Stack", "[DataTypes][Stack]")
 {
-    Structura::Stack<int>* stack = new Structura::Stack<int>();
+    St::Stack<int>* stack = new St::Stack<int>();
 
     REQUIRE(stack->isEmpty());
     REQUIRE(stack->size() == 0);
@@ -13,7 +13,8 @@ TEST_CASE("Stack", "[DataTypes][Stack]")
     {
         SECTION("Empty stack")
         {
-            stack->push(15);
+            const int size = stack->push(15);
+            REQUIRE(size == 1);
             REQUIRE(stack->size() == 1);
             REQUIRE(stack->peek() == 15);
         }
@@ -21,7 +22,8 @@ TEST_CASE("Stack", "[DataTypes][Stack]")
         SECTION("Stack with many elements")
         {
             stack->push(20);
-            stack->push(25);
+            const int size = stack->push(25);
+            REQUIRE(size == 2);
             REQUIRE(stack->size() == 2);
             REQUIRE(stack->peek() == 25);
         }
