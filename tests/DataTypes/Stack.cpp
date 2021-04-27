@@ -1,7 +1,7 @@
-#include <DataTypes/Stack.hpp>
+#include <Datatypes/Stack.hpp>
 #include <catch2/catch_test_macros.hpp>
 
-TEST_CASE("Stack", "[DataTypes][Stack]")
+TEST_CASE("Stack", "[Datatypes][Stack]")
 {
     St::Stack<int>* stack = new St::Stack<int>();
 

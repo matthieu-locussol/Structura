@@ -40,6 +40,6 @@ namespace St {
     };
 } // namespace St
 
-#include <DataTypes/Stack.inl>
+#include <Datatypes/Stack.inl>
 
 #endif

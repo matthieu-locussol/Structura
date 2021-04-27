@@ -2,9 +2,9 @@
 
 namespace St {
 
-    //! @ingroup DataTypes
+    //! @ingroup Datatypes
     //! @class St::Stack
-    //! @brief DataTypes class that represents a Stack data structure
+    //! @brief Datatypes class that represents a Stack data structure
     //!
     //! A stack is a data structure used to store a collection of objects. Individual items
     //! can be added and stored in a stack using a `push` operation. Objects can be retrieved
