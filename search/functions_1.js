@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isempty_26',['isEmpty',['../class_structura_1_1_stack.html#a669fb4a6837fb70063d25de0479be3d6',1,'Structura::Stack']]]
+  ['isempty_13',['isEmpty',['../class_st_1_1_stack.html#a02fc49c6e455d18fd13f4e013f6e0cb5',1,'St::Stack']]]
 ];

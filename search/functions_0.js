@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['duplicate_25',['duplicate',['../class_structura_1_1_stack.html#a794b81383e3209d7a2777c4f205acbe2',1,'Structura::Stack']]]
+  ['duplicate_12',['duplicate',['../class_st_1_1_stack.html#a0c1dec6e55e5b564059428bd7819fefb',1,'St::Stack']]]
 ];

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['readme_2emd_8',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['rotateleft_9',['rotateLeft',['../class_structura_1_1_stack.html#aee7fa78c08a8a0ad35ebfaa817e57fa7',1,'Structura::Stack']]],
-  ['rotateright_10',['rotateRight',['../class_structura_1_1_stack.html#ac4df15845364d5352de7c578a04104d0',1,'Structura::Stack']]]
+  ['structura_7',['Structura',['../index.html',1,'']]],
+  ['size_8',['size',['../class_st_1_1_stack.html#a795b72164e3fee83e57174d64fe59652',1,'St::Stack']]],
+  ['stack_9',['Stack',['../class_st_1_1_stack.html',1,'St']]],
+  ['swap_10',['swap',['../class_st_1_1_stack.html#afcfc9c6f13a496d0ad6a4cb964b9bd15',1,'St::Stack']]]
 ];

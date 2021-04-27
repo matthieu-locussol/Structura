@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['operator_3d_4',['operator=',['../class_structura_1_1_stack.html#a7ef23fcc1081ca7121e297dde4e6b917',1,'Structura::Stack::operator=(Stack &amp;&amp;)=default'],['../class_structura_1_1_stack.html#a0aa10104d706d01d462dac810cf3e4cc',1,'Structura::Stack::operator=(const Stack &amp;)=delete']]]
+  ['peek_2',['peek',['../class_st_1_1_stack.html#a6071aaf7ef39fb2fa087e3d809e5f0b2',1,'St::Stack']]],
+  ['pop_3',['pop',['../class_st_1_1_stack.html#a782166c42f5e4b033095b9b5e4a31b97',1,'St::Stack']]],
+  ['push_4',['push',['../class_st_1_1_stack.html#a3fc823427372f5fdead1a537f88cc253',1,'St::Stack']]]
 ];

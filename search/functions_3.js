@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['peek_28',['peek',['../class_structura_1_1_stack.html#a47cdeffd2b00db55e057455da1c67e4b',1,'Structura::Stack']]],
-  ['pop_29',['pop',['../class_structura_1_1_stack.html#a895e40f67eb5606412cf37baabdbad40',1,'Structura::Stack']]],
-  ['push_30',['push',['../class_structura_1_1_stack.html#a33bf906a75ad0f86615374af1b104c6d',1,'Structura::Stack']]]
+  ['rotateleft_17',['rotateLeft',['../class_st_1_1_stack.html#ab0b14c0121ae73f0ecc6e96c58332cfe',1,'St::Stack']]],
+  ['rotateright_18',['rotateRight',['../class_st_1_1_stack.html#ac9e7217f8f1a97a53f0469f0d778529d',1,'St::Stack']]]
 ];

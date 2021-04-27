@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['structura_38',['Structura',['../index.html',1,'']]]
+  ['structura_21',['Structura',['../index.html',1,'']]]
 ];
