@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isempty_1',['isEmpty',['../class_st_1_1_stack.html#a02fc49c6e455d18fd13f4e013f6e0cb5',1,'St::Stack']]]
+  ['duplicate_1',['duplicate',['../class_st_1_1_stack.html#a0c1dec6e55e5b564059428bd7819fefb',1,'St::Stack']]]
 ];

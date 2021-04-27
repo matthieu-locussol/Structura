@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stack_11',['Stack',['../class_st_1_1_stack.html',1,'St']]]
+  ['linkedlist_17',['LinkedList',['../class_st_1_1_linked_list.html',1,'St']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['duplicate_12',['duplicate',['../class_st_1_1_stack.html#a0c1dec6e55e5b564059428bd7819fefb',1,'St::Stack']]]
+  ['append_19',['append',['../class_st_1_1_linked_list.html#a7723dfab1d7a445b23e99f0ab1daad65',1,'St::LinkedList']]]
 ];
