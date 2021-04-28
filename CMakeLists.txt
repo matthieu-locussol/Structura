@@ -3,9 +3,9 @@ CMAKE_MINIMUM_REQUIRED( VERSION 3.4 )
 # Configure project
 PROJECT( Structura VERSION 1.0.0 )
 
-OPTION( STRUCTURA_TESTS         "Build Structura test suite" OFF )
-OPTION( STRUCTURA_STATIC        "Build Structura library as a static library" OFF )
-OPTION( STRUCTURA_DOCUMENTATION "Build Structura documentation" OFF )
+OPTION( STRUCTURA_TESTS         "Build ${PROJECT_NAME} test suite" OFF )
+OPTION( STRUCTURA_STATIC        "Build ${PROJECT_NAME} library as a static library" OFF )
+OPTION( STRUCTURA_DOCUMENTATION "Build ${PROJECT_NAME} documentation" OFF )
 
 # Configuration CMake Module Path
 SET( CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake" )
@@ -74,7 +74,7 @@ ELSE()
 ENDIF()
 
 # Adding library
-ADD_LIBRARY( "Structura" "${STRUCTURA_LINKING}" ${STRUCTURA_FILES} )
+ADD_LIBRARY( ${PROJECT_NAME} "${STRUCTURA_LINKING}" ${STRUCTURA_FILES} )
 
 IF( STRUCTURA_TESTS )
 	# Configuring Catch2
@@ -90,6 +90,6 @@ IF( STRUCTURA_TESTS )
 	)
 
 	ADD_EXECUTABLE( "StructuraTests" ${STRUCTURA_TESTS_FILES} )
-	TARGET_LINK_LIBRARIES( "StructuraTests" PRIVATE "Structura" )
-	TARGET_LINK_LIBRARIES( "StructuraTests" PRIVATE Catch2::Catch2WithMain )
+	TARGET_LINK_LIBRARIES( "${PROJECT_NAME}Tests" PRIVATE ${PROJECT_NAME} )
+	TARGET_LINK_LIBRARIES( "${PROJECT_NAME}Tests" PRIVATE Catch2::Catch2WithMain )
 ENDIF()
