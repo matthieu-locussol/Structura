@@ -1,4 +1,3 @@
-#include <iostream>
 #include <stdexcept>
 
 namespace St {
@@ -14,8 +13,6 @@ namespace St {
     LinkedList<T>::~LinkedList()
     {
         Node* current = this->_head;
-
-        std::cout << this->serialize() << std::endl;
 
         while (current != nullptr) {
             const Node* item = current;

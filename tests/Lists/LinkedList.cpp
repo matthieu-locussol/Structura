@@ -21,7 +21,6 @@ TEST_CASE("LinkedList", "[Lists][LinkedList]")
         {
             list->insert(20);
             const int size = list->insert(25);
-            std::cout << size << std::endl;
             REQUIRE(size == 2);
             REQUIRE(list->size() == 2);
             REQUIRE_THROWS(list->insert(999, -1));
